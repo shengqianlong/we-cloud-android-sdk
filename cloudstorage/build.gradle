@@ -1,9 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
-
-group='com.github.xihehe'
+//apply plugin: 'com.jfrog.bintray'
+//
+//group='com.github.xihehe'
 
 String gaUrl = "api.wecloud.cn:10007/file/" //正式环境
 String alphaUrl = "api-wecloud.da300.com:10007/file/"// 新加坡内测URL
@@ -93,39 +93,39 @@ dependencies {
 //    implementation 'com.chanjx:chanjx-utils:1.0.2'
 }
 
-def siteUrl = 'https://github.com/smuyyh/BankCardFormat'    // Git项目主页
-def gitUrl = 'https://github.com/smuyyh/BankCardFormat.git' // Git仓库url
-group = "cn.wecloud.storage" // 一般为包名
-install {
-    repositories.mavenInstaller {
-        // 生成POM.xml
-        pom {
-            project {
-                packaging 'aar'
-                name 'weCloud Sdk' // 项目描述
-                url siteUrl
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer { // 开发者个人信息
-                        id 'fc'
-                        name 'fc'
-                        email '524406642@qq.com'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
-}
+//def siteUrl = 'https://github.com/smuyyh/BankCardFormat'    // Git项目主页
+//def gitUrl = 'https://github.com/smuyyh/BankCardFormat.git' // Git仓库url
+//group = "cn.wecloud.storage" // 一般为包名
+//install {
+//    repositories.mavenInstaller {
+//        // 生成POM.xml
+//        pom {
+//            project {
+//                packaging 'aar'
+//                name 'weCloud Sdk' // 项目描述
+//                url siteUrl
+//                licenses {
+//                    license {
+//                        name 'The Apache Software License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//                developers {
+//                    developer { // 开发者个人信息
+//                        id 'fc'
+//                        name 'fc'
+//                        email '524406642@qq.com'
+//                    }
+//                }
+//                scm {
+//                    connection gitUrl
+//                    developerConnection gitUrl
+//                    url siteUrl
+//                }
+//            }
+//        }
+//    }
+//}
 //task sourcesJar(type: Jar) {
 //    from android.sourceSets.main.java.srcDirs
 //    classifier = 'sources'
