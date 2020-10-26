@@ -1,2 +1,2 @@
-include ':app', ':cloudstorage'
-rootProject.name='FileCloud'
+include ':app'
+rootProject.name='WeCloudLib'
