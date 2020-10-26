@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.wecloud.storage" >
+    
+    <application android:networkSecurityConfig="@xml/network_security_config">
+        <provider
+            android:name=".net.provider.NetInitProvider"
+            android:authorities="${applicationId}.net-init-provider"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+    
+</manifest>
