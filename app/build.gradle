@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 //apply plugin: 'com.github.dcendents.android-maven'
 
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.xihehe '//com.github.{你的的账号名}
+
 String gaUrl = "api.wecloud.cn:10007/file/" //正式环境
 String alphaUrl = "api-wecloud.da300.com:10007/file/"// 新加坡内测URL
 String devUrl ="192.168.1.95:11007/file/"//
