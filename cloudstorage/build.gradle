@@ -90,3 +90,54 @@ dependencies {
 
 //    implementation 'com.chanjx:chanjx-utils:1.0.2'
 }
+
+def siteUrl = 'https://github.com/smuyyh/BankCardFormat'    // Git项目主页
+def gitUrl = 'https://github.com/smuyyh/BankCardFormat.git' // Git仓库url
+group = "com.yuyh.bankcardformat" // 一般为包名
+install {
+    repositories.mavenInstaller {
+        // 生成POM.xml
+        pom {
+            project {
+                packaging 'aar'
+                name 'weCloud Sdk' // 项目描述
+                url siteUrl
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer { // 开发者个人信息
+                        id 'fc'
+                        name 'fc'
+                        email '524406642@qq.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    options.encoding = "UTF-8" // 设置编码，否则中文可能会提示出错
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
