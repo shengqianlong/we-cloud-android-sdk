@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 String gaUrl = "api.wecloud.cn:10007/file/" //正式环境
 String alphaUrl = "api-wecloud.da300.com:10007/file/"// 新加坡内测URL
