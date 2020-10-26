@@ -41,6 +41,9 @@ android {
         }
     }
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/java'
+    }
 
     flavorDimensions "versionCode"
     //暂时先这样写，后续要放在lib_base
