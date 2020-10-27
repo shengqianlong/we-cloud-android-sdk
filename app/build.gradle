@@ -110,7 +110,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 task classesJar(type: Jar) {
-    from "$buildDir/outputs/aar"
+    from "$buildDir/intermediates/packaged-classes/ga/release"
 }
 
 artifacts {
