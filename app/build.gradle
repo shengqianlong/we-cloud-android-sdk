@@ -3,31 +3,35 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-apply plugin: 'com.github.dcendents.android-maven'
-
-repositories {
-    mavenCentral()
-    google()
-    jcenter()
-    maven { url "https://jitpack.io" }
-}
-
-group='com.github.shengqianlong '//com.github.{你的的账号名}
+//apply plugin: 'com.github.dcendents.android-maven'
+//
+//repositories {
+//    mavenCentral()
+//    google()
+//    jcenter()
+//    maven { url "https://jitpack.io" }
+//}
+//
+//group='com.github.shengqianlong '//com.github.{你的的账号名}
 
 String gaUrl = "api.wecloud.cn:10007/file/" //正式环境
-String alphaUrl = "api-wecloud.da300.com:10007/file/"// 新加坡内测URL
-String devUrl ="192.168.1.95:11007/file/"//
+//String alphaUrl = "api-wecloud.da300.com:10007/file/"// 新加坡内测URL
+//String devUrl ="192.168.1.95:11007/file/"//
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        buildConfigField "String", "BASE_URL", "\"https://$gaUrl\""//8001基本内测
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -45,23 +49,23 @@ android {
         main.java.srcDirs += 'src/main/java'
     }
 
-    flavorDimensions "versionCode"
-
-    //暂时先这样写，后续要放在lib_base
-    productFlavors {
-        //内测
-        dev {
-            buildConfigField "String", "BASE_URL", "\"http://$devUrl\""//8001基本内测
-        }
-        //内测
-        alpha {
-            buildConfigField "String", "BASE_URL", "\"https://$alphaUrl\""//8001基本内测
-        }
-        //正式版
-        ga {
-            buildConfigField "String", "BASE_URL", "\"https://$gaUrl\""//8001基本内测
-        }
-    }
+//    flavorDimensions "versionCode"
+//
+//    //暂时先这样写，后续要放在lib_base
+//    productFlavors {
+//        //内测
+//        dev {
+//            buildConfigField "String", "BASE_URL", "\"http://$devUrl\""//8001基本内测
+//        }
+//        //内测
+//        alpha {
+//            buildConfigField "String", "BASE_URL", "\"https://$alphaUrl\""//8001基本内测
+//        }
+//        //正式版
+//        ga {
+//            buildConfigField "String", "BASE_URL", "\"https://$gaUrl\""//8001基本内测
+//        }
+//    }
 }
 
 
