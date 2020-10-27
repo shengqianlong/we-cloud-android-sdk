@@ -10,9 +10,9 @@ import java.io.File
 import java.net.URLEncoder
 
 object UploadUtils {
-    const val CLOUD_ACCESS_KEY = "AccessKey"
-    const val CLOUD_SECRET_KEY = "SecretKey"
-    const val CLOUD_USER_ID_VALUE = "BucketId"
+    const val CLOUD_ACCESS_KEY = "weCloud_AccessKey"
+    const val CLOUD_SECRET_KEY = "weCloud_SecretKey"
+    const val CLOUD_USER_ID_VALUE = "weCloud_BucketId"
 
     fun createParams(uploadModel: UploadModel):HashMap<String,String?>{
         val params = HashMap<String,String?>()
