@@ -3,17 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-//apply plugin: 'com.github.dcendents.android-maven'
-//
-//repositories {
-//    mavenCentral()
-//    google()
-//    jcenter()
-//    maven { url "https://jitpack.io" }
-//}
-//
-//group='com.github.shengqianlong '//com.github.{你的的账号名}
-
 String gaUrl = "api.wecloud.cn:10007/file/" //正式环境
 //String alphaUrl = "api-wecloud.da300.com:10007/file/"// 新加坡内测URL
 //String devUrl ="192.168.1.95:11007/file/"//
@@ -43,32 +32,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    sourceSets {
-        main.jniLibs.srcDirs=['libs']
-        main.java.srcDirs += 'src/main/java'
-    }
-
-//    flavorDimensions "versionCode"
-//
-//    //暂时先这样写，后续要放在lib_base
-//    productFlavors {
-//        //内测
-//        dev {
-//            buildConfigField "String", "BASE_URL", "\"http://$devUrl\""//8001基本内测
-//        }
-//        //内测
-//        alpha {
-//            buildConfigField "String", "BASE_URL", "\"https://$alphaUrl\""//8001基本内测
-//        }
-//        //正式版
-//        ga {
-//            buildConfigField "String", "BASE_URL", "\"https://$gaUrl\""//8001基本内测
-//        }
+//    sourceSets {
+//        main.jniLibs.srcDirs=['libs']
+//        main.java.srcDirs += 'src/main/java'
 //    }
 }
-
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -79,50 +47,22 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.40"
 
-    implementation files('libs/adapter-rxjava2-2.4.0.jar')
-    implementation files('libs/converter-gson-2.4.0.jar')
-    implementation files('libs/okhttp-3.10.0.jar')
-    implementation files('libs/okio-1.14.0.jar')
-    implementation files('libs/retrofit-2.4.0.jar')
-    implementation files('libs/rxandroid-2.1.1.jar')
-    implementation files('libs/rxjava-2.2.8.jar')
-    implementation files('libs/gson-2.8.2.jar')
-    implementation files('libs/reactive-streams-1.0.2.jar')
+//    implementation files('libs/adapter-rxjava2-2.4.0.jar')
+//    implementation files('libs/converter-gson-2.4.0.jar')
+//    implementation files('libs/okhttp-3.10.0.jar')
+//    implementation files('libs/okio-1.14.0.jar')
+//    implementation files('libs/retrofit-2.4.0.jar')
+//    implementation files('libs/rxandroid-2.1.1.jar')
+//    implementation files('libs/rxjava-2.2.8.jar')
+//    implementation files('libs/gson-2.8.2.jar')
+//    implementation files('libs/reactive-streams-1.0.2.jar')
     //Retrofit2
-//    implementation "com.squareup.retrofit2:retrofit:2.4.0"
-//    implementation "com.squareup.retrofit2:retrofit-converters:2.4.0"
-//    implementation("com.squareup.retrofit2:adapter-rxjava2:2.4.0")
-//            { exclude group: 'io.reactivex.rxjava2' }
-//    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
-//
-//    implementation "io.reactivex.rxjava2:rxjava:2.2.8"
-//    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.squareup.retrofit2:retrofit-converters:2.4.0"
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.4.0")
+            { exclude group: 'io.reactivex.rxjava2' }
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.8"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
 }
-
-
-
-//task sourcesJar(type: Jar) {
-//    classifier = 'sources'
-//    from android.sourceSets.main.java.sourceFiles
-//}
-//
-//task javadoc(type: Javadoc) {
-//    source = android.sourceSets.main.java.sourceFiles
-//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-//}
-//
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
-//
-//task classesJar(type: Jar) {
-//    from "$buildDir/intermediates/packaged-classes/ga/release"
-//}
-//
-//artifacts {
-//    archives classesJar
-//    archives javadocJar
-//    archives sourcesJar
-//}
 
