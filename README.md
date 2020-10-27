@@ -15,7 +15,24 @@ app build.gradle
     /**   implementation 'com.github.shengqianlong:we-cloud-android-sdk:1.0.0' 
 
 
-
+申请Key 最好 配置在主Module的 AndroidManiFest.xml 里
+	
+	<Application>
+		<meta-data
+		    android:name="BucketId"
+		    android:value="key_你的buckId"
+		    />
+		<meta-data
+		    android:name="AccessKey"
+		    android:value="你的AccessKey"
+		    />
+		<meta-data
+		    android:name="SecretKey"
+		    android:value="你的SecretKey"
+		    />
+	</Application>
+	
+	
 使用网络框架为
 
     /**   RxJava+Retrofit+OkHttp
