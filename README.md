@@ -12,22 +12,22 @@ root build.gradle
 
 app build.gradle 
 
-    /**   implementation 'com.github.shengqianlong:we-cloud-android-sdk:1.0.0' 
+    /**   implementation 'com.github.shengqianlong:we-cloud-android-sdk:1.0.1' 
 
 
 申请Key 最好 配置在主Module的 AndroidManiFest.xml 里
 	
 	<Application>
 		<meta-data
-		    android:name="BucketId"
+		    android:name="weCloud_BucketId"
 		    android:value="key_你的buckId"
 		    />
 		<meta-data
-		    android:name="AccessKey"
+		    android:name="weCloud_AccessKey"
 		    android:value="你的AccessKey"
 		    />
 		<meta-data
-		    android:name="SecretKey"
+		    android:name="weCloud_SecretKey"
 		    android:value="你的SecretKey"
 		    />
 	</Application>
