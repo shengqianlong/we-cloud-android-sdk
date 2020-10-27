@@ -2,17 +2,17 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-//
-//apply plugin: 'com.github.dcendents.android-maven'
-//
-//repositories {
-//    mavenCentral()
-//    google()
-//    jcenter()
-//    maven { url "https://jitpack.io" }
-//}
-//
-//group='com.github.xihehe '//com.github.{你的的账号名}
+
+apply plugin: 'com.github.dcendents.android-maven'
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
+
+group='com.github.xihehe '//com.github.{你的的账号名}
 
 String gaUrl = "api.wecloud.cn:10007/file/" //正式环境
 String alphaUrl = "api-wecloud.da300.com:10007/file/"// 新加坡内测URL
@@ -95,42 +95,14 @@ dependencies {
 }
 
 
-////Copy类型
-//task makeJar(type: Copy) {
-//    //删除存在的
-//    delete 'build/outputs/wecloud.jar'
-//    //设置拷贝的文件
-//    from('build/intermediates/packaged-classes/ga/release/')
-//
-//    from(project.zipTree('libs/adapter-rxjava2-2.4.0.jar'))
-//    from(project.zipTree('libs/converter-gson-2.4.0.jar'))
-//    from(project.zipTree('libs/okhttp-3.10.0.jar'))
-//    from(project.zipTree('libs/okio-1.14.0.jar'))
-//    from(project.zipTree('libs/retrofit-2.4.0.jar'))
-//    from(project.zipTree('libs/rxandroid-2.1.1.jar'))
-//    from(project.zipTree('libs/rxjava-2.2.8.jar'))
-//    from(project.zipTree('libs/gson-2.8.2.jar'))
-//    from(project.zipTree('libs/reactive-streams-1.0.2.jar'))
-//    //打进jar包后的文件目录
-//    into('build/outputs/class/')
-//    //include ,exclude参数来设置过滤
-//    include('classes.jar')
-//////    //指定打包的class
-//    include "cn/wecloud/storage/*.class"
-//    include "com/squareup/**/*.class"
-//    include "io/reactivex/**/*.class"
-//
-//    //重命名
-//    rename ('classes.jar', 'wecloud.jar')
-//}
-//makeJar.dependsOn(build)
 
 
-//task sourcesJar(type: Jar) {
-//    classifier = 'sources'
-//    from android.sourceSets.main.java.sourceFiles
-//}
-//
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+
 //task javadoc(type: Javadoc) {
 //    source = android.sourceSets.main.java.sourceFiles
 //    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
@@ -142,12 +114,12 @@ dependencies {
 //}
 //
 //task classesJar(type: Jar) {
-//    from "$buildDir/intermediates/packaged-classes/ga/release"
+//    from "$buildDir/intermediates/classes/release"
 //}
-//
-//artifacts {
+
+artifacts {
 //    archives classesJar
 //    archives javadocJar
-//    archives sourcesJar
-//}
+    archives sourcesJar
+}
 
